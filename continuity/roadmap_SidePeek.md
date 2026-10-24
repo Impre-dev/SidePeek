@@ -7,7 +7,7 @@
 
 - ⭐ **Fix 1 — Essentiels : cellule carrée à largeur FIXE** (~40px, indépendante de la sidebar — pas du % du conteneur) + icône centrée dans le bouton. Aujourd'hui : cellules en % (`minmax(23.7%, …)`) → sidebar 500 = boutons méga
 - **Fix 3 — Extensions épinglées en bas** (`#zen-sidebar-foot-buttons`) : au repos le 1er item est rogné hors champ — suspect : conteneur dimensionné sur la largeur expanded + centré dedans → ancrer sur la largeur repos
-- **Fix 2 — Paddings asymétriques des items** (tabs, tab-folders, workspace indicator, newtab…) : padding-left > padding-right natif, décalage au repos. ⚠️ Comparer MyCss AVANT (Impre y retouche déjà tailles d'icônes + alignement/position) — tranchage à l'œil, pas de battle à fronts multiples
+- **Fix 2 — Paddings asymétriques** : ✅ cause racine trouvée (margin-right du #navigator-toolbox) — fixé dans **MyCss** par Impre (`margin-right: 2px`). Reste à l'œil : workspace indicator, top buttons si besoin
 - Peaufinage en attente : rendu du clip à 56px (workspace indicator, boutons top), courbe de transition, délai anti-hover-accidentel (conditionnel)
 
 ## Leçons de plateforme

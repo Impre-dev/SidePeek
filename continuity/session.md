@@ -13,4 +13,5 @@ Design acté : sidebar **intégrée au flux** (pas de flottant), seule la width 
 - [leçon] Workflow : j'ai déroulé l'ancien régime sans charger le skill sine-workflow — rattrapé : rattachement repo dans l'install + archivage atelier (régime v2, cf. SKILL.md)
 - [fix] `b3d77e3` grille essentiels figée à la largeur étendue — validé (« GG »)
 - [v0.2.0] `f1167a7` tailles libres : uc script relais prefs → vars CSS (pattern NavBtn), champs libres Sine, mods.json aligné
+- [fix2] Paddings asymétriques : cause racine = margin-right du #navigator-toolbox — fixé par Impre dans MyCss (`margin-right: 2px`), hors périmètre SidePeek. Tentative margin-inline-end tabs revertée (sans effet)
 - [workflow] Skill sine-workflow mis à jour : création directe dans l'install (régime v2 direct) + registres continuity dans le repo du mod
