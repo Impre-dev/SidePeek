@@ -47,7 +47,7 @@
     --peek-foot-margin-bottom: 0px;
     /* Navbar repliée du compact hide-toolbar : 10px (natif = separation 8px)
        pour harmoniser le gap top avec les autres côtés */
-    --peek-navbar-collapsed: 9.4px;
+    --peek-navbar-collapsed: 9.8px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
