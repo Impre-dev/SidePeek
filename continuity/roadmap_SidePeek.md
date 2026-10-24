@@ -20,4 +20,6 @@
 
 | Version | Quoi | Validation | Hash |
 |---|---|---|---|
-| v0.1.0 | Squelette (push initial d'install — **non encore exécuté**, signalement protocolaire) | ⏳ constat live attendu | `0112a59` |
+| v0.1.0 | Squelette (push initial d'install — signalement protocolaire) | ✅ constaté : fonctionne (essentiels wrappent → fix) | `0112a59` |
+| v0.1.1 | Fix anti-wrap essentiels : grille figée à la largeur étendue | ✅ constaté Impre 24/10 (« GG ») | `b3d77e3` |
+| v0.2.0 | Tailles libres (champs Sine) — uc script relais prefs → vars CSS, observer live | ✅ constaté Impre 24/10 (« gg ») | `f1167a7` |
