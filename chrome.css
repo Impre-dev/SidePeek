@@ -35,6 +35,9 @@
     /* Gaps réglables (essentiels : natif 4px · extensions : MyCss pose 0) */
     --peek-essentials-gap: 4px;
     --peek-foot-gap: 0px;
+    /* Hauteur essentiels : natif expanded = 46px (tab-min-height scoping) */
+    --peek-essential-height: 46px;
+    --peek-foot-margin-left: 0px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -73,6 +76,7 @@
 
       & .tabbrowser-tab[zen-essential='true'] {
         width: var(--peek-essential-size) !important;
+        height: var(--peek-essential-height) !important;
       }
 
       & #zen-essentials {
@@ -91,6 +95,7 @@
         justify-content: flex-start !important;
         /* bat le gap: 0 !important de MyCss (spécificité du scope > règle MyCss) */
         gap: var(--peek-foot-gap) !important;
+        margin-inline-start: var(--peek-foot-margin-left) !important;
       }
     }
   }

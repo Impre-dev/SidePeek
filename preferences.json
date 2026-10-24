@@ -1,42 +1,71 @@
 [
   {
+    "type": "separator",
+    "label": "🗜️ Sidebar",
+    "margin": "15px 0 15px 0"
+  },
+  {
     "property": "sidepeek.collapsed-width",
-    "label": "📐 Largeur au repos (px)",
+    "label": "Largeur au repos (px)",
     "type": "string",
     "placeholder": "56",
     "defaultValue": "56"
   },
   {
     "property": "sidepeek.expanded-width",
-    "label": "📐 Largeur au survol (px)",
+    "label": "Largeur au survol (px)",
     "type": "string",
     "placeholder": "212",
     "defaultValue": "212"
   },
   {
     "property": "sidepeek.transition-duration",
-    "label": "🎞️ Durée de la transition (ms)",
+    "label": "Durée de la transition (ms)",
     "type": "string",
     "placeholder": "250",
     "defaultValue": "250"
   },
   {
+    "type": "separator",
+    "label": "🔲 Essentiels",
+    "margin": "15px 0 15px 0"
+  },
+  {
     "property": "sidepeek.essential-size",
-    "label": "📐 Taille des essentiels (px)",
+    "label": "Largeur des boutons (px)",
     "type": "string",
     "placeholder": "48",
     "defaultValue": "48"
   },
   {
+    "property": "sidepeek.essential-height",
+    "label": "Hauteur des boutons (px)",
+    "type": "string",
+    "placeholder": "46",
+    "defaultValue": "46"
+  },
+  {
     "property": "sidepeek.essentials-gap",
-    "label": "📐 Espacement entre essentiels (px)",
+    "label": "Espacement entre essentiels (px)",
     "type": "string",
     "placeholder": "4",
     "defaultValue": "4"
   },
   {
+    "type": "separator",
+    "label": "🧩 Extensions (bas de sidebar)",
+    "margin": "15px 0 15px 0"
+  },
+  {
     "property": "sidepeek.foot-gap",
-    "label": "📐 Espacement entre extensions (px)",
+    "label": "Espacement entre extensions (px)",
+    "type": "string",
+    "placeholder": "0",
+    "defaultValue": "0"
+  },
+  {
+    "property": "sidepeek.foot-margin-left",
+    "label": "Marge gauche du groupe (px)",
     "type": "string",
     "placeholder": "0",
     "defaultValue": "0"

@@ -35,11 +35,13 @@
     root.style.setProperty('--peek-essential-size', int('sidepeek.essential-size', 40) + 'px');
     root.style.setProperty('--peek-essentials-gap', int('sidepeek.essentials-gap', 4) + 'px');
     root.style.setProperty('--peek-foot-gap', int('sidepeek.foot-gap', 0) + 'px');
+    root.style.setProperty('--peek-essential-height', int('sidepeek.essential-height', 46) + 'px');
+    root.style.setProperty('--peek-foot-margin-left', int('sidepeek.foot-margin-left', 0) + 'px');
   }
 
   // Changement live depuis l'UI Sine — observer de pref = event-driven
   const obs = { observe: () => apply() };
-  ['sidepeek.collapsed-width', 'sidepeek.expanded-width', 'sidepeek.transition-duration', 'sidepeek.essential-size', 'sidepeek.essentials-gap', 'sidepeek.foot-gap']
+  ['sidepeek.collapsed-width', 'sidepeek.expanded-width', 'sidepeek.transition-duration', 'sidepeek.essential-size', 'sidepeek.essentials-gap', 'sidepeek.foot-gap', 'sidepeek.essential-height', 'sidepeek.foot-margin-left']
     .forEach(name => Services.prefs.addObserver(name, obs));
 
   apply();

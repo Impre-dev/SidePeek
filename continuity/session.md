@@ -15,4 +15,5 @@ Design acté : sidebar **intégrée au flux** (pas de flottant), seule la width 
 - [v0.2.0] `f1167a7` tailles libres : uc script relais prefs → vars CSS (pattern NavBtn), champs libres Sine, mods.json aligné
 - [fix2] Paddings asymétriques : cause racine = margin-right du #navigator-toolbox — fixé par Impre dans MyCss (`margin-right: 2px`), hors périmètre SidePeek. Tentative margin-inline-end tabs revertée (sans effet)
 - [v0.2.2] gaps réglables : essentiels (défaut 4px natif) + extensions (défaut 0, bat le gap MyCss par spécificité) — validé (« gg »)
+- [v0.2.3] prefs essential-height + foot-margin-left + UI regroupée en 3 sections (séparateurs, pattern Nebula) — validé (« nickel »)
 - [workflow] Skill sine-workflow mis à jour : création directe dans l'install (régime v2 direct) + registres continuity dans le repo du mod
