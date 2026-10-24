@@ -73,6 +73,24 @@
       &:hover {
         width: var(--peek-expanded) !important;
       }
+
+      /*
+       * Essentiels : la grille (auto-fit, minmax 23.7%) calcule ses colonnes
+       * sur la largeur du conteneur — à 56px, tout s'empile. On fige la base
+       * de calcul à la largeur étendue : nombre de colonnes constant,
+       * aucun wrap. (Pattern Zen lui-même : vertical-tabs.css fige déjà
+       * --zen-sidebar-width sur ce conteneur quand il est caché.)
+       * Les valeurs reproduisent le rendu natif expanded (calc(100% + 2p)
+       * où 100% = sidebar-width - 2p).
+       */
+      & .zen-essentials-container {
+        width: var(--zen-sidebar-width) !important;
+        min-width: var(--zen-sidebar-width) !important;
+      }
+
+      & #zen-essentials {
+        min-width: var(--zen-sidebar-width) !important;
+      }
     }
   }
 }

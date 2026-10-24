@@ -20,3 +20,4 @@
 
 | Version | Quoi | Validation | Hash |
 |---|---|---|---|
+| v0.1.0 | Squelette (push initial d'install — **non encore exécuté**, signalement protocolaire) | ⏳ constat live attendu | `0112a59` |
