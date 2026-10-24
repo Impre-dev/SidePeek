@@ -38,6 +38,8 @@
     /* Hauteur essentiels : natif expanded = 46px (tab-min-height scoping) */
     --peek-essential-height: 46px;
     --peek-foot-margin-left: 0px;
+    /* Label des dossiers au repos : ~2 lettres (2ch ≈ largeur de 2 glyphes) */
+    --peek-folder-label: 2ch;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -96,6 +98,22 @@
         /* bat le gap: 0 !important de MyCss (spécificité du scope > règle MyCss) */
         gap: var(--peek-foot-gap) !important;
         margin-inline-start: var(--peek-foot-margin-left) !important;
+      }
+
+      /*
+       * Dossiers : au repos, n'afficher que les 2 premières lettres du label
+       * (coupe propre via max-width, le clip natif coupait en plein mot).
+       * Au hover, le label reprend sa largeur (l'édition #tab-label-input
+       * n'est pas visée → renommer marche, on est forcément en hover).
+       */
+      &:not(:hover) zen-folder > .tab-group-label-container > label {
+        max-width: var(--peek-folder-label) !important;
+        overflow: hidden;
+        white-space: nowrap;
+        /* MyCss centre le texte — en label réduit, center déborde des 2 côtés
+           (on lit le MILIEU du mot). flex-start → les PREMIÈRES lettres. */
+        justify-content: flex-start !important;
+        transition: max-width var(--peek-transition) ease;
       }
     }
   }
