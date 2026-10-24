@@ -26,5 +26,19 @@
     "type": "string",
     "placeholder": "48",
     "defaultValue": "48"
+  },
+  {
+    "property": "sidepeek.essentials-gap",
+    "label": "📐 Espacement entre essentiels (px)",
+    "type": "string",
+    "placeholder": "4",
+    "defaultValue": "4"
+  },
+  {
+    "property": "sidepeek.foot-gap",
+    "label": "📐 Espacement entre extensions (px)",
+    "type": "string",
+    "placeholder": "0",
+    "defaultValue": "0"
   }
 ]

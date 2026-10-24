@@ -32,6 +32,9 @@
     --peek-transition: 250ms;
     /* Taille FIXE des cellules essentielles (carré, indépendant de la sidebar) */
     --peek-essential-size: 48px;
+    /* Gaps réglables (essentiels : natif 4px · extensions : MyCss pose 0) */
+    --peek-essentials-gap: 4px;
+    --peek-foot-gap: 0px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -65,6 +68,7 @@
         width: var(--zen-sidebar-width) !important;
         min-width: var(--zen-sidebar-width) !important;
         grid-template-columns: repeat(auto-fill, var(--peek-essential-size)) !important;
+        gap: var(--peek-essentials-gap) !important;
       }
 
       & .tabbrowser-tab[zen-essential='true'] {
@@ -85,6 +89,8 @@
        */
       & #zen-sidebar-foot-buttons {
         justify-content: flex-start !important;
+        /* bat le gap: 0 !important de MyCss (spécificité du scope > règle MyCss) */
+        gap: var(--peek-foot-gap) !important;
       }
     }
   }
