@@ -19,5 +19,12 @@
     "type": "string",
     "placeholder": "250",
     "defaultValue": "250"
+  },
+  {
+    "property": "sidepeek.essential-size",
+    "label": "📐 Taille des essentiels (px)",
+    "type": "string",
+    "placeholder": "48",
+    "defaultValue": "48"
   }
 ]

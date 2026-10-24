@@ -32,11 +32,12 @@
     root.style.setProperty('--peek-collapsed', int('sidepeek.collapsed-width', 56) + 'px');
     root.style.setProperty('--peek-expanded', int('sidepeek.expanded-width', 212) + 'px');
     root.style.setProperty('--peek-transition', int('sidepeek.transition-duration', 250) + 'ms');
+    root.style.setProperty('--peek-essential-size', int('sidepeek.essential-size', 40) + 'px');
   }
 
   // Changement live depuis l'UI Sine — observer de pref = event-driven
   const obs = { observe: () => apply() };
-  ['sidepeek.collapsed-width', 'sidepeek.expanded-width', 'sidepeek.transition-duration']
+  ['sidepeek.collapsed-width', 'sidepeek.expanded-width', 'sidepeek.transition-duration', 'sidepeek.essential-size']
     .forEach(name => Services.prefs.addObserver(name, obs));
 
   apply();

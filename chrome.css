@@ -30,6 +30,8 @@
     --peek-collapsed: 56px;
     --peek-expanded: 212px;
     --peek-transition: 250ms;
+    /* Taille FIXE des cellules essentielles (carré, indépendant de la sidebar) */
+    --peek-essential-size: 50px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -48,21 +50,41 @@
       }
 
       /*
-       * Essentiels : la grille (auto-fit, minmax 23.7%) calcule ses colonnes
-       * sur la largeur du conteneur — à 56px, tout s'empile. On fige la base
-       * de calcul à la largeur étendue : nombre de colonnes constant,
-       * aucun wrap. (Pattern Zen lui-même : vertical-tabs.css fige déjà
-       * --zen-sidebar-width sur ce conteneur quand il est caché.)
-       * Les valeurs reproduisent le rendu natif expanded (calc(100% + 2p)
-       * où 100% = sidebar-width - 2p).
+       * Essentiels : deux problèmes, un fix.
+       * 1) La grille (auto-fit, minmax %) wrappe à 56px → figée à la largeur
+       *    étendue depuis v0.1.1.
+       * 2) MAIS la cellule fait alors 100% du conteneur (212px) et Zen centre
+       *    l'icône dedans → au repos, le clip n'en montre qu'un fragment
+       *    décalé. → cellules à largeur FIXE posées depuis la gauche :
+       *    carré indépendant de la sidebar, icône centrée dedans, stable
+       *    à 56 comme à 500px.
+       * (MyCss règle déjà --min-essentials-width-wrap ; le % du max() reste
+       * dominant — le fix agit au niveau des pistes de grille.)
        */
       & .zen-essentials-container {
         width: var(--zen-sidebar-width) !important;
         min-width: var(--zen-sidebar-width) !important;
+        grid-template-columns: repeat(auto-fill, var(--peek-essential-size)) !important;
+      }
+
+      & .tabbrowser-tab[zen-essential='true'] {
+        width: var(--peek-essential-size) !important;
       }
 
       & #zen-essentials {
         min-width: var(--zen-sidebar-width) !important;
+      }
+
+      /*
+       * Extensions épinglées (foot buttons) : natif = width:100% +
+       * space-between ; MyCss centre (justify-content: center) — sur 56px,
+       * 3 boutons de 24px débordent symétriquement → le 1er est rogné.
+       * → groupé à gauche : 1er visible au repos, le hover révèle la place,
+       * les items ne bougent jamais. (Neutralise le center de MyCss —
+       * nettoyage de Custom.css à trancher après constat.)
+       */
+      & #zen-sidebar-foot-buttons {
+        justify-content: flex-start !important;
       }
     }
   }

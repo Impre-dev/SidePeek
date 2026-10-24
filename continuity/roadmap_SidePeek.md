@@ -5,9 +5,10 @@
 
 ## File priorisée
 
-- ⭐ **v0.1.0** : squelette écrit → push GitHub → install console → premier constat live d'Impre
-- Réglages à l'œil post-constat : rendu du clip à 56px (workspace indicator, boutons top), durée de transition
-- v0.2 (conditionnel) : délai d'ouverture si hovers accidentels constatés
+- ⭐ **Fix 1 — Essentiels : cellule carrée à largeur FIXE** (~40px, indépendante de la sidebar — pas du % du conteneur) + icône centrée dans le bouton. Aujourd'hui : cellules en % (`minmax(23.7%, …)`) → sidebar 500 = boutons méga
+- **Fix 3 — Extensions épinglées en bas** (`#zen-sidebar-foot-buttons`) : au repos le 1er item est rogné hors champ — suspect : conteneur dimensionné sur la largeur expanded + centré dedans → ancrer sur la largeur repos
+- **Fix 2 — Paddings asymétriques des items** (tabs, tab-folders, workspace indicator, newtab…) : padding-left > padding-right natif, décalage au repos. ⚠️ Comparer MyCss AVANT (Impre y retouche déjà tailles d'icônes + alignement/position) — tranchage à l'œil, pas de battle à fronts multiples
+- Peaufinage en attente : rendu du clip à 56px (workspace indicator, boutons top), courbe de transition, délai anti-hover-accidentel (conditionnel)
 
 ## Leçons de plateforme
 
