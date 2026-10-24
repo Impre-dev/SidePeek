@@ -11,4 +11,5 @@ Design acté : sidebar **intégrée au flux** (pas de flottant), seule la width 
 - [design] Brief validé par Impre : intégrée au flux, seule la width change, nom SidePeek
 - [squelette] v0.1.0 écrit — push install (`0112a59`) — constat : fonctionne, MAIS essentiels wrappent en 2 lignes
 - [leçon] Workflow : j'ai déroulé l'ancien régime sans charger le skill sine-workflow — rattrapé : rattachement repo dans l'install + archivage atelier (régime v2, cf. SKILL.md)
-- [fix] `b3d77e3` grille essentiels figée à la largeur étendue — en attente de constat
+- [fix] `b3d77e3` grille essentiels figée à la largeur étendue — validé (« GG »)
+- [workflow] Skill sine-workflow mis à jour : création directe dans l'install (régime v2 direct) + registres continuity dans le repo du mod
