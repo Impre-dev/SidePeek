@@ -1,0 +1,20 @@
+[
+  {
+    "property": "sidepeek.collapsed-width",
+    "label": "📐 Largeur au repos (px)",
+    "type": "string",
+    "defaultValue": "56"
+  },
+  {
+    "property": "sidepeek.expanded-width",
+    "label": "📐 Largeur au survol (px)",
+    "type": "string",
+    "defaultValue": "212"
+  },
+  {
+    "property": "sidepeek.transition-duration",
+    "label": "🎞️ Durée de la transition (ms)",
+    "type": "string",
+    "defaultValue": "250"
+  }
+]

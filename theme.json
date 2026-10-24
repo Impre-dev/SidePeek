@@ -1,0 +1,14 @@
+{
+  "id": "SidePeek",
+  "name": "SidePeek",
+  "description": "Sidebar fine au repos qui s'étend au survol — layout interne figé : les tabs ne sont jamais redimensionnés ni repositionnés. Conçu pour : Barres d'outils multiples + compact « Masquer la barre d'outils ».",
+  "author": "Impre",
+  "version": "0.1.0",
+  "createdAt": "2026-10-24",
+  "updatedAt": "2026-10-24",
+  "style": {
+    "chrome": "chrome.css"
+  },
+  "tags": ["chrome", "sidebar", "minimal"],
+  "fork": ["zen"]
+}

@@ -1,0 +1,78 @@
+/*
+ * SidePeek — la sidebar respire, les tabs ne bougent jamais.
+ *
+ * Au repos : conteneur rogné à 56px (overflow: clip).
+ * Au survol : le conteneur s'étend à 212px — le clip se lève, rien d'autre.
+ *
+ * Le secret : `--zen-sidebar-width` pilote la géométrie INTERNE des tabs
+ * (essentiels, grille — vertical-tabs.css). En la figeant à la largeur
+ * étendue, le layout interne ne varie JAMAIS : aucun reflow des tabs,
+ * aucun repositionnement. Seul le conteneur change de largeur.
+ *
+ * La sidebar reste INTÉGRÉE au flux (pas de position fixed, pas de
+ * z-index) — le web se pousse naturellement au survol.
+ *
+ * Scoping (réactif live) :
+ *   - Barres d'outils multiples  → :root:not([zen-single-toolbar])
+ *   - Sidebar étendue            → [zen-sidebar-expanded="true"]
+ *   - Compact ne gère pas la sidebar → @media not -moz-pref(hide-tabbar)
+ *   - Hors personnalisation / plein écran vidéo
+ *
+ * Zen écrit la largeur en INLINE style (width + --zen-sidebar-width +
+ * --zen-toolbox-min-width 152px) : d'où les !important ci-dessous.
+ */
+
+@media not -moz-pref('zen.view.compact.hide-tabbar') {
+  :root:not([zen-single-toolbar])[zen-sidebar-expanded="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
+    /* Défauts — écrasés par les échelles de préférences ci-dessous */
+    --peek-collapsed: 56px;
+    --peek-expanded: 212px;
+    --peek-transition: 250ms;
+    /* Min-width sous la largeur repos (le natif impose 152px en inline) */
+    --peek-min-width: calc(var(--peek-collapsed) - 6px);
+
+    /* ---- Échelles de préférences (pattern marketplace) ---- */
+    @media -moz-pref("sidepeek.collapsed-width", "48") {
+      --peek-collapsed: 48px;
+    }
+    @media -moz-pref("sidepeek.collapsed-width", "64") {
+      --peek-collapsed: 64px;
+    }
+    @media -moz-pref("sidepeek.expanded-width", "180") {
+      --peek-expanded: 180px;
+    }
+    @media -moz-pref("sidepeek.expanded-width", "200") {
+      --peek-expanded: 200px;
+    }
+    @media -moz-pref("sidepeek.expanded-width", "240") {
+      --peek-expanded: 240px;
+    }
+    @media -moz-pref("sidepeek.expanded-width", "260") {
+      --peek-expanded: 260px;
+    }
+    @media -moz-pref("sidepeek.expanded-width", "300") {
+      --peek-expanded: 300px;
+    }
+    @media -moz-pref("sidepeek.transition-duration", "150") {
+      --peek-transition: 150ms;
+    }
+    @media -moz-pref("sidepeek.transition-duration", "400") {
+      --peek-transition: 400ms;
+    }
+
+    & #navigator-toolbox {
+      /* Repos : conteneur fin, contenu interne figé à la largeur étendue */
+      width: var(--peek-collapsed) !important;
+      --zen-toolbox-min-width: var(--peek-min-width) !important;
+      --zen-sidebar-width: var(--peek-expanded) !important;
+
+      overflow: clip;
+      transition: width var(--peek-transition) ease;
+
+      /* Survol : le clip se lève — les tabs réapparaissent tels quels */
+      &:hover {
+        width: var(--peek-expanded) !important;
+      }
+    }
+  }
+}
