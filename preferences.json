@@ -26,6 +26,13 @@
     "defaultValue": "250"
   },
   {
+    "property": "sidepeek.tabs-margin-top",
+    "label": "Décalage vertical de la liste (px, négatif = haut)",
+    "type": "string",
+    "placeholder": "-2",
+    "defaultValue": "-2"
+  },
+  {
     "type": "separator",
     "label": "🔲 Essentiels",
     "margin": "15px 0 15px 0"
@@ -69,6 +76,18 @@
     "type": "string",
     "placeholder": "0",
     "defaultValue": "0"
+  },
+  {
+    "property": "sidepeek.foot-margin-bottom",
+    "label": "Décalage vertical des extensions (px)",
+    "type": "string",
+    "placeholder": "0",
+    "defaultValue": "0"
+  },
+  {
+    "type": "separator",
+    "label": "📁 Dossiers",
+    "margin": "15px 0 15px 0"
   },
   {
     "property": "sidepeek.folder-group-margin",

@@ -25,4 +25,5 @@
 | v0.1.1 | Fix anti-wrap essentiels : grille figée à la largeur étendue | ✅ constaté Impre 24/10 (« GG ») | `b3d77e3` |
 | v0.2.0 | Tailles libres (champs Sine) — uc script relais prefs → vars CSS, observer live | ✅ constaté Impre 24/10 (« gg ») | `f1167a7` |
 | v0.2.1 | Essentiels carrés fixes + foot flex-start + prefs taille/hauteur/gaps/marge + UI 3 sections | ✅ constaté Impre 24/10 | `5a5bb96`→`f1167a7..` |
-| v0.2.4 | Dossiers : 2 premières lettres au repos (flex-start bat le center MyCss), full au hover | ✅ constaté Impre 24/10 (« GG ») | voir git log |
+| v0.2.4 | Dossiers : 2 premières lettres au repos (flex-start bat le center MyCss), full au hover | ✅ constaté Impre 24/10 (« GG ») | `fac7280` |
+| v0.2.6 | margin-right toolbox au repos + marge groupe dossiers + décalages verticaux liste/extensions (11 prefs, 4 sections UI) | ✅ constaté Impre 24/10 | voir git log |

@@ -17,5 +17,7 @@ Design acté : sidebar **intégrée au flux** (pas de flottant), seule la width 
 - [v0.2.2] gaps réglables : essentiels (défaut 4px natif) + extensions (défaut 0, bat le gap MyCss par spécificité) — validé (« gg »)
 - [v0.2.3] prefs essential-height + foot-margin-left + UI regroupée en 3 sections (séparateurs, pattern Nebula) — validé (« nickel »)
 - [v0.2.4] dossiers : 2 premières lettres au repos (max-width + justify flex-start contre le center MyCss), full au hover — validé (« GG »)
+- [v0.2.5-6] margin-right toolbox AU REPOS uniquement (fix migré de MyCss) + marge du GROUPE de dossiers (first/last-of-type, imbriqués exclus) + décalage vertical liste (-2px, reprend MyCss) + décalage vertical extensions (margin-bottom, levier devtool Impre) — validé (« bien joué »)
 - [v0.2.4] dossiers : 2 premières lettres au repos (max-width + justify flex-start contre le center MyCss), full au hover — validé (« GG »)
+- [v0.2.5-6] margin-right toolbox AU REPOS uniquement (fix migré de MyCss) + marge du GROUPE de dossiers (first/last-of-type, imbriqués exclus) + décalage vertical liste (-2px, reprend MyCss) + décalage vertical extensions (margin-bottom, levier devtool Impre) — validé (« bien joué »)
 - [workflow] Skill sine-workflow mis à jour : création directe dans l'install (régime v2 direct) + registres continuity dans le repo du mod

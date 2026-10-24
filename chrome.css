@@ -42,6 +42,9 @@
     --peek-folder-label: 2ch;
     /* Marge verticale du GROUPE de dossiers (1er au-dessus, dernier en-dessous) */
     --peek-folder-group-margin: 0px;
+    /* Décalage vertical de la liste (MyCss : -2px — la pref prend le relais) */
+    --peek-tabs-margin-top: -2px;
+    --peek-foot-margin-bottom: 0px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -95,11 +98,18 @@
        * les items ne bougent jamais. (Neutralise le center de MyCss —
        * nettoyage de Custom.css à trancher après constat.)
        */
+      /* Décalage vertical global de la liste (reprend la règle MyCss) */
+      & #tabbrowser-tabs {
+        margin-top: var(--peek-tabs-margin-top) !important;
+      }
+
       & #zen-sidebar-foot-buttons {
         justify-content: flex-start !important;
         /* bat le gap: 0 !important de MyCss (spécificité du scope > règle MyCss) */
         gap: var(--peek-foot-gap) !important;
         margin-inline-start: var(--peek-foot-margin-left) !important;
+        /* margin-BOTTOM : le groupe est calé par le bas (margin-top absorbé) */
+        margin-bottom: var(--peek-foot-margin-bottom) !important;
       }
 
       /*
