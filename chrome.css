@@ -31,7 +31,7 @@
     --peek-expanded: 212px;
     --peek-transition: 250ms;
     /* Taille FIXE des cellules essentielles (carré, indépendant de la sidebar) */
-    --peek-essential-size: 50px;
+    --peek-essential-size: 48px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
