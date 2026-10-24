@@ -23,7 +23,7 @@
  */
 
 @media not -moz-pref('zen.view.compact.hide-tabbar') {
-  :root:not([zen-single-toolbar])[zen-sidebar-expanded="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
+  :root:not([zen-single-toolbar])[zen-sidebar-expanded='true']:not([customizing]):not([inDOMFullscreen='true']) {
     /* Défauts (fallback avant le premier run du script) — side-peek.uc.js
        pose ces 3 variables en inline sur :root, avec les valeurs des prefs
        (champs libres, changement live via observer). */
@@ -45,6 +45,9 @@
     /* Décalage vertical de la liste (MyCss : -2px — la pref prend le relais) */
     --peek-tabs-margin-top: -2px;
     --peek-foot-margin-bottom: 0px;
+    /* Navbar repliée du compact hide-toolbar : 10px (natif = separation 8px)
+       pour harmoniser le gap top avec les autres côtés */
+    --peek-navbar-collapsed: 9.4px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -137,7 +140,7 @@
         transition: max-width var(--peek-transition) ease;
       }
 
-    /* Marge verticale des dossiers (cf. var ci-dessus) */
+      /* Marge verticale des dossiers (cf. var ci-dessus) */
       /*
        * GROUPE de dossiers : l'espace au-dessus du 1er et en-dessous du
        * dernier folder — PAS l'écart entre eux. :first/last-of-type = 1er/
@@ -150,6 +153,19 @@
       }
       & :not(zen-folder) > zen-folder:last-of-type {
         margin-block-end: var(--peek-folder-group-margin) !important;
+      }
+    }
+
+    /* Compact hide-toolbar : navbar repliée ajustée — harmonise le gap top
+       (le natif la replie à --zen-element-separation = 8px, le gap paraissait
+       bouffé vs les autres côtés). Hors hide-toolbar : jamais appliqué.
+       ⚠️ Les :not(...) préservent le DÉPLIAGE au hover (zen-has-hover etc.
+       posés par ZenCompactMode sur la navbar elle-même).
+       ⚠️ La navbar-wrapper vit dans #zen-appcontent-wrapper, PAS dans le
+       toolbox → ce bloc est SŒUR du bloc #navigator-toolbox. */
+    @media -moz-pref('zen.view.compact.hide-toolbar') {
+      & #zen-appcontent-navbar-wrapper:not([zen-has-hover]):not([has-popup-menu]):not([zen-compact-mode-active]) {
+        height: var(--peek-navbar-collapsed) !important;
       }
     }
   }
