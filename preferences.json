@@ -3,18 +3,21 @@
     "property": "sidepeek.collapsed-width",
     "label": "📐 Largeur au repos (px)",
     "type": "string",
+    "placeholder": "56",
     "defaultValue": "56"
   },
   {
     "property": "sidepeek.expanded-width",
     "label": "📐 Largeur au survol (px)",
     "type": "string",
+    "placeholder": "212",
     "defaultValue": "212"
   },
   {
     "property": "sidepeek.transition-duration",
     "label": "🎞️ Durée de la transition (ms)",
     "type": "string",
+    "placeholder": "250",
     "defaultValue": "250"
   }
 ]

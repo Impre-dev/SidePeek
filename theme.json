@@ -3,9 +3,17 @@
   "name": "SidePeek",
   "description": "Sidebar fine au repos qui s'étend au survol — layout interne figé : les tabs ne sont jamais redimensionnés ni repositionnés. Conçu pour : Barres d'outils multiples + compact « Masquer la barre d'outils ».",
   "author": "Impre",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "createdAt": "2026-10-24",
   "updatedAt": "2026-10-24",
+  "js": true,
+  "scripts": {
+    "side-peek.uc.js": {
+      "name": "SidePeek — tailles libres",
+      "description": "Relais des préférences (largeurs, transition) vers les variables CSS — valeurs libres, changement live",
+      "include": ["chrome://browser/content/browser.xhtml"]
+    }
+  },
   "style": {
     "chrome": "chrome.css"
   },

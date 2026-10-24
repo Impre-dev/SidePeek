@@ -24,41 +24,14 @@
 
 @media not -moz-pref('zen.view.compact.hide-tabbar') {
   :root:not([zen-single-toolbar])[zen-sidebar-expanded="true"]:not([customizing]):not([inDOMFullscreen="true"]) {
-    /* Défauts — écrasés par les échelles de préférences ci-dessous */
+    /* Défauts (fallback avant le premier run du script) — side-peek.uc.js
+       pose ces 3 variables en inline sur :root, avec les valeurs des prefs
+       (champs libres, changement live via observer). */
     --peek-collapsed: 56px;
     --peek-expanded: 212px;
     --peek-transition: 250ms;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
-
-    /* ---- Échelles de préférences (pattern marketplace) ---- */
-    @media -moz-pref("sidepeek.collapsed-width", "48") {
-      --peek-collapsed: 48px;
-    }
-    @media -moz-pref("sidepeek.collapsed-width", "64") {
-      --peek-collapsed: 64px;
-    }
-    @media -moz-pref("sidepeek.expanded-width", "180") {
-      --peek-expanded: 180px;
-    }
-    @media -moz-pref("sidepeek.expanded-width", "200") {
-      --peek-expanded: 200px;
-    }
-    @media -moz-pref("sidepeek.expanded-width", "240") {
-      --peek-expanded: 240px;
-    }
-    @media -moz-pref("sidepeek.expanded-width", "260") {
-      --peek-expanded: 260px;
-    }
-    @media -moz-pref("sidepeek.expanded-width", "300") {
-      --peek-expanded: 300px;
-    }
-    @media -moz-pref("sidepeek.transition-duration", "150") {
-      --peek-transition: 150ms;
-    }
-    @media -moz-pref("sidepeek.transition-duration", "400") {
-      --peek-transition: 400ms;
-    }
 
     & #navigator-toolbox {
       /* Repos : conteneur fin, contenu interne figé à la largeur étendue */
