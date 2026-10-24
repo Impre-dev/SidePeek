@@ -69,5 +69,12 @@
     "type": "string",
     "placeholder": "0",
     "defaultValue": "0"
+  },
+  {
+    "property": "sidepeek.folder-group-margin",
+    "label": "Marge du groupe de dossiers (px)",
+    "type": "string",
+    "placeholder": "0",
+    "defaultValue": "0"
   }
 ]

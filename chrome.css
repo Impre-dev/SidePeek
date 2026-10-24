@@ -40,6 +40,8 @@
     --peek-foot-margin-left: 0px;
     /* Label des dossiers au repos : ~2 lettres (2ch ≈ largeur de 2 glyphes) */
     --peek-folder-label: 2ch;
+    /* Marge verticale du GROUPE de dossiers (1er au-dessus, dernier en-dessous) */
+    --peek-folder-group-margin: 0px;
     /* Min-width sous la largeur repos (le natif impose 152px en inline) */
     --peek-min-width: calc(var(--peek-collapsed) - 6px);
 
@@ -101,6 +103,15 @@
       }
 
       /*
+       * Repos uniquement : marge droite du toolbox (le contenu clippé
+       * collait au bord). En expanded le natif est bon → :not(:hover).
+       * (Cause racine du décalage des tabs, constaté Impre 24/10.)
+       */
+      &:not(:hover) {
+        margin-right: 1.2px !important;
+      }
+
+      /*
        * Dossiers : au repos, n'afficher que les 2 premières lettres du label
        * (coupe propre via max-width, le clip natif coupait en plein mot).
        * Au hover, le label reprend sa largeur (l'édition #tab-label-input
@@ -114,6 +125,21 @@
            (on lit le MILIEU du mot). flex-start → les PREMIÈRES lettres. */
         justify-content: flex-start !important;
         transition: max-width var(--peek-transition) ease;
+      }
+
+    /* Marge verticale des dossiers (cf. var ci-dessus) */
+      /*
+       * GROUPE de dossiers : l'espace au-dessus du 1er et en-dessous du
+       * dernier folder — PAS l'écart entre eux. :first/last-of-type = 1er/
+       * dernier zen-folder parmi leurs siblings ; le parent :not(zen-folder)
+       * exclut les folders IMBRIQUÉS (ils vivent dans le .tab-group-container
+       * de leur parent). Les defaults natifs (2px) restent aux autres.
+       */
+      & :not(zen-folder) > zen-folder:first-of-type {
+        margin-block-start: var(--peek-folder-group-margin) !important;
+      }
+      & :not(zen-folder) > zen-folder:last-of-type {
+        margin-block-end: var(--peek-folder-group-margin) !important;
       }
     }
   }
